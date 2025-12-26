@@ -1,9 +1,10 @@
-import * as CollapsiblePrimitive from "@radix-ui/react-collapsible"
+import { Root } from "@radix-ui/react-collapsible";
 
-const Collapsible = CollapsiblePrimitive.Root
+const Collapsible = Root;
 
-const CollapsibleTrigger = CollapsiblePrimitive.CollapsibleTrigger
-
-const CollapsibleContent = CollapsiblePrimitive.CollapsibleContent
-
-export { Collapsible, CollapsibleTrigger, CollapsibleContent }
+export { Collapsible };
+// biome-ignore lint/performance/noBarrelFile: This file also creates a component from Root, not just re-exports
+export {
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@radix-ui/react-collapsible";

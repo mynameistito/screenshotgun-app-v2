@@ -1,6 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.js";
 
 @layer base {
   :root {
@@ -51,10 +50,20 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
+  }
+  html {
+    background-color: hsl(var(--background));
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    min-height: 100vh;
+  }
+  #root {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    min-height: 100vh;
   }
 }
 
@@ -65,66 +74,73 @@
     filter: blur(8px);
     transform: translateY(20px);
   }
-  
+
   .fade-in-blur {
     animation-name: fadeInBlur;
   }
-  
+
   .slide-in-from-top {
     animation-name: slideInFromTopBlur;
     transform: translateY(-20px);
   }
-  
+
   .slide-in-from-bottom {
     animation-name: slideInFromBottomBlur;
   }
-  
+
   .duration-1000 {
     animation-duration: 1000ms;
   }
-  
+
   .duration-1500 {
     animation-duration: 1500ms;
   }
-  
+
   .duration-1200 {
     animation-duration: 1200ms;
   }
-  
+
   .duration-1800 {
     animation-duration: 1800ms;
   }
-  
+
   .delay-150 {
     animation-delay: 150ms;
   }
-  
+
   .delay-300 {
     animation-delay: 300ms;
   }
-  
+
   .delay-450 {
     animation-delay: 450ms;
   }
-  
+
   .delay-500 {
     animation-delay: 500ms;
   }
-  
+
   .delay-600 {
     animation-delay: 600ms;
   }
-  
+
   .delay-1000 {
     animation-delay: 1000ms;
   }
-  
+
   .delay-1500 {
     animation-delay: 1500ms;
   }
-  
+
   .delay-2000 {
     animation-delay: 2000ms;
+  }
+
+  /* Disable transitions for theme changes on cards */
+  .transition-none {
+    transition-property: none !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
   }
 }
 

@@ -1,11 +1,11 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
-  readonly VITE_SCREENSHOT_API_KEY: string
+  readonly VITE_SCREENSHOT_API_KEY: string;
 }
 
 interface ImportMeta {
-  readonly env: ImportMetaEnv
+  readonly env: ImportMetaEnv;
 }
 
 declare module "*.svg" {
@@ -46,7 +46,7 @@ declare module "canvas-confetti" {
     zIndex?: number;
     disableForReducedMotion?: boolean;
   }
-  
+
   function confetti(options?: ConfettiOptions): Promise<null>;
   export = confetti;
 }
