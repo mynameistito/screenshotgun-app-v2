@@ -33,7 +33,7 @@ const Alert = forwardRef<
 Alert.displayName = "Alert";
 
 const AlertTitle = forwardRef<
-  HTMLParagraphElement,
+  HTMLHeadingElement,
   HTMLAttributes<HTMLHeadingElement>
 >(({ className, ...props }, ref) => (
   <h5
@@ -45,8 +45,8 @@ const AlertTitle = forwardRef<
 AlertTitle.displayName = "AlertTitle";
 
 const AlertDescription = forwardRef<
-  HTMLParagraphElement,
-  HTMLAttributes<HTMLParagraphElement>
+  HTMLDivElement,
+  HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
   <div
     className={cn("text-sm [&_p]:leading-relaxed", className)}
