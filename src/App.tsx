@@ -9,6 +9,7 @@ import {
   Settings,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -650,7 +651,10 @@ function App() {
     <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-5xl px-6 py-12">
         {/* Header */}
-        <div className="mb-16 text-center">
+        <div className="relative mb-16 text-center">
+          <div className="absolute top-0 right-0">
+            <ThemeToggle />
+          </div>
           <div className="mb-4 flex flex-col items-center">
             <img
               alt="Screenshotgun"
@@ -715,7 +719,7 @@ function App() {
         </div>
 
         {/* Main Card */}
-        <Card className="slide-in-from-bottom mb-12 animate-in rounded-3xl border border-neutral-200 p-8 shadow-xl delay-300 duration-1200 sm:p-16">
+        <Card className="slide-in-from-bottom mb-12 animate-in rounded-3xl border border-neutral-200 p-8 shadow-xl transition-none delay-300 duration-1200 sm:p-16">
           <CardContent className="space-y-8 p-0">
             {/* API Key Input */}
             <div className="space-y-3">

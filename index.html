@@ -11,6 +11,37 @@
       rel="stylesheet"
     >
     <title>Screenshotgun - Website Screenshot Tool</title>
+    <script>
+    "use strict";
+    // Prevent flash of wrong theme by applying theme class before React hydration
+    (() => {
+      const themeStorageKey = "screenshotgun-theme";
+      let theme = "system";
+
+      try {
+        const stored = localStorage.getItem(themeStorageKey);
+        if (stored === "light" || stored === "dark") {
+          theme = stored;
+        }
+      } catch {
+        // localStorage may not be available
+      }
+
+      let resolvedTheme = theme;
+      if (theme === "system") {
+        resolvedTheme = window.matchMedia("(prefers-color-scheme: dark)")
+          .matches
+          ? "dark"
+          : "light";
+      }
+
+      if (resolvedTheme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

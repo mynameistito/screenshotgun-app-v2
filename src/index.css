@@ -52,9 +52,18 @@
   * {
     border-color: hsl(var(--border));
   }
+  html {
+    background-color: hsl(var(--background));
+  }
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
+    min-height: 100vh;
+  }
+  #root {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    min-height: 100vh;
   }
 }
 
@@ -125,6 +134,13 @@
 
   .delay-2000 {
     animation-delay: 2000ms;
+  }
+
+  /* Disable transitions for theme changes on cards */
+  .transition-none {
+    transition-property: none !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
   }
 }
 
